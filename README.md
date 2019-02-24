@@ -43,5 +43,14 @@ let stringsLongerThanThree = getIndexesThatPass((value) => value.length > 3,  ar
 
 ## Loading
 ```
-
+// if using TypeScript:
+import {getFirstIndexOf, getLastIndexOf, getIndexOfPrimitive, getIndexesOf, getIndexesThatPass} 
+    from '@writetome51/array-get-indexes'
+    
+// if using ES5 JavaScript:
+var getFirstIndexOf = require('@writetome51/array-get-indexes').getFirstIndexOf;
+var getLastIndexOf = require('@writetome51/array-get-indexes').getLastIndexOf;
+var getIndexOfPrimitive = require('@writetome51/array-get-indexes').getIndexOfPrimitive;
+var getIndexesOf = require('@writetome51/array-get-indexes').getIndexesOf;
+var getIndexesThatPass = require('@writetome51/array-get-indexes').getIndexesThatPass;
 ```
