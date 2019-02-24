@@ -1,0 +1,37 @@
+{
+  "name": "@writetome51/array-get-indexes",
+  "version": "1.0.0",
+  "description": "array-handling functions that return indexes of items in the array",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/writetome51/array-get-indexes.git"
+  },
+  "keywords": [
+    "array",
+    "search",
+    "get",
+    "find",
+    "index",
+    "indexes",
+    "data"
+  ],
+  "author": "Steve Thompson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/writetome51/array-get-indexes/issues"
+  },
+  "homepage": "https://github.com/writetome51/array-get-indexes#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "basic-data-handling": "~1.0.15",
+    "error-if-values-are-not-arrays": "~1.0.2",
+    "error-if-not-populated-array": "~1.0.1",
+    "error-if-not-primitive-or-array": "~1.0.1",
+    "@writetome51/arrays-match": "~1.0.5"
+  }
+}
