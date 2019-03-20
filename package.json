@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/array-get-indexes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "array-handling functions that return indexes of items in the array",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -31,7 +31,8 @@
     "basic-data-handling": "~1.0.15",
     "error-if-values-are-not-arrays": "~1.0.2",
     "error-if-not-populated-array": "~1.0.1",
-    "error-if-not-primitive-or-array": "~1.0.1",
-    "@writetome51/arrays-match": "~1.0.5"
+    "error-if-not-primitive-or-array": "~1.0.2",
+    "@writetome51/arrays-match": "~1.0.5",
+    "@writetome51/array-get-copy": "~1.1.2"
   }
 }
