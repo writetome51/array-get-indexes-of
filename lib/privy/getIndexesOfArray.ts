@@ -1,5 +1,5 @@
-import { isArray } from 'basic-data-handling/isArray_notArray';
-import { errorIfNotArray } from 'basic-data-handling/errorIfNotArray';
+import { isArray } from '@writetome51/is-array-not-array';
+import { errorIfNotArray } from 'error-if-not-array';
 import { errorIfNotPopulatedArray } from 'error-if-not-populated-array';
 import { arraysMatch } from '@writetome51/arrays-match';
 

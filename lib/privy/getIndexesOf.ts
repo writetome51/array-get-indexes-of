@@ -1,4 +1,4 @@
-import { isArray } from 'basic-data-handling/isArray_notArray';
+import { isArray } from '@writetome51/is-array-not-array';
 import { errorIfNotPrimitiveOrArray } from 'error-if-not-primitive-or-array';
 import { getIndexesOfPrimitive } from './getIndexesOfPrimitive';
 import { getIndexesOfArray } from './getIndexesOfArray';

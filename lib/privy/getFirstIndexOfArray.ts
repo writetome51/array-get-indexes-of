@@ -1,7 +1,7 @@
-import { isArray } from 'basic-data-handling/isArray_notArray';
-import { errorIfNotArray } from 'basic-data-handling/errorIfNotArray';
-import { errorIfNotPopulatedArray } from 'error-if-not-populated-array';
 import { arraysMatch } from '@writetome51/arrays-match';
+import { errorIfNotArray } from 'error-if-not-array';
+import { errorIfNotPopulatedArray } from 'error-if-not-populated-array';
+import { isArray } from '@writetome51/is-array-not-array';
 
 
 // returns -1 if array being searched for isn't found.

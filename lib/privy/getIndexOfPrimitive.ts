@@ -1,5 +1,5 @@
-import { errorIfNotInteger } from 'basic-data-handling/errorIfNotInteger';
-import { errorIfNotPrimitive } from 'basic-data-handling/errorIfNotPrimitive';
+import { errorIfNotInteger } from 'error-if-not-integer';
+import { errorIfNotPrimitive } from 'error-if-not-primitive';
 import { errorIfNotPopulatedArray } from 'error-if-not-populated-array';
 
 // According to tests, this error-checking does not slow down execution. It's not

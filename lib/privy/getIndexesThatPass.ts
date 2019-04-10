@@ -1,5 +1,5 @@
-import { errorIfNotFunction } from 'basic-data-handling/errorIfNotFunction';
-import { errorIfNotArray } from 'basic-data-handling/errorIfNotArray';
+import { errorIfNotFunction } from 'error-if-not-function';
+import { errorIfNotArray } from 'error-if-not-array';
 
 
 // Returns all indexes of array items that pass a test.
