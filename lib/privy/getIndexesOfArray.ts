@@ -1,23 +1,26 @@
 import { isArray } from '@writetome51/is-array-not-array';
-import { errorIfNotArray } from 'error-if-not-array';
-import { errorIfNotPopulatedArray } from 'error-if-not-populated-array';
+import { errorIfLengthIsZero } from 'error-if-length-is-zero';
 import { arraysMatch } from '@writetome51/arrays-match';
 
+// If you don't need every index, set `howMany` to desired number to speed up execution.
 
-// returns empty [] if arrayToSearchFor isn't found.
-// if arrayToSearchFor contains objects, this will always return empty array.
+export function getIndexesOfArray(
+	arrayToSearchFor,
+	arrayToSearchInside,
+	howMany: number | 'all' = 'all'
+): number[] {
 
-export function getIndexesOfArray(arrayToSearchFor, arrayToSearchInside): number[] {
-	errorIfNotArray(arrayToSearchFor);
-	errorIfNotPopulatedArray(arrayToSearchInside);
-	let indexes = [];
+	errorIfLengthIsZero(arrayToSearchInside);
+	if (howMany === 'all') howMany = arrayToSearchInside.length;
 
-	arrayToSearchInside.filter((value, index) => {
-		if (isArray(value) && arraysMatch(value, arrayToSearchFor)) {
-			indexes.push(index);
-			return true;
+	let indexes = [], i = -1;
+	while (howMany > 0 && (++i < arrayToSearchInside.length)) {
+		if (isArray(arrayToSearchInside[i]) && arraysMatch(arrayToSearchInside[i], arrayToSearchFor)
+		) {
+			indexes.push(i);
+			// @ts-ignore
+			--howMany;
 		}
-		else return false;
-	});
+	}
 	return indexes;
 }

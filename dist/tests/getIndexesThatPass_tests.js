@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var getIndexesThatPass_1 = require("../privy/getIndexesThatPass");
-var arrays_match_1 = require("@writetome51/arrays-match");
-var arr = [1, 5, 9, 13, 17, 21, 25, 29, 37, 41, 45, 49, 53, 57, 61, 65, 73, 81, 85, 89, 93];
-var length = arr.length;
+const getIndexesThatPass_1 = require("../privy/getIndexesThatPass");
+const arrays_match_1 = require("@writetome51/arrays-match");
+let arr = [1, 5, 9, 13, 17, 21, 25, 29, 37, 41, 45, 49, 53, 57, 61, 65, 73, 81, 85, 89, 93];
+let length = arr.length;
 // Test 1
-var indexes = getIndexesThatPass_1.getIndexesThatPass(function (value, index, arr) {
+let indexes = getIndexesThatPass_1.getIndexesThatPass((value, index, arr) => {
     return (value < 50 && index % 2 === 0 && (value * 2 < arr[index * 2]));
 }, arr);
 if (arrays_match_1.arraysMatch(indexes, [4, 6, 10]))
@@ -18,7 +18,7 @@ if (arr.length === 21)
 else
     console.log('test 1A failed');
 // Test 2
-indexes = getIndexesThatPass_1.getIndexesThatPass(function (value, index) {
+indexes = getIndexesThatPass_1.getIndexesThatPass((value, index) => {
     return (value % 3 === 0 && index % 2 === 0);
 }, arr);
 if (arrays_match_1.arraysMatch(indexes, [2, 10, 20]))
@@ -27,7 +27,7 @@ else
     console.log('test 2 failed');
 // Test 3
 arr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29];
-indexes = getIndexesThatPass_1.getIndexesThatPass(function (value) {
+indexes = getIndexesThatPass_1.getIndexesThatPass((value) => {
     return (value % 3 === 0);
 }, arr);
 if (arrays_match_1.arraysMatch(indexes, [1, 4, 7, 10, 13]))
@@ -35,13 +35,13 @@ if (arrays_match_1.arraysMatch(indexes, [1, 4, 7, 10, 13]))
 else
     console.log('test 3 failed');
 // Test 4: If no match, should return empty array:
-indexes = getIndexesThatPass_1.getIndexesThatPass(function (value) { return (value % 6 === 0); }, arr);
+indexes = getIndexesThatPass_1.getIndexesThatPass((value) => (value % 6 === 0), arr);
 if (arrays_match_1.arraysMatch(indexes, []))
     console.log('test 4 passed');
 else
     console.log('test 4 failed');
 // Test 5: Should trigger error if first arg is not function:
-var errorTriggered = false;
+let errorTriggered = false;
 try {
     getIndexesThatPass_1.getIndexesThatPass({}, arr);
 }
@@ -56,7 +56,7 @@ else
 errorTriggered = false;
 try {
     // @ts-ignore
-    getIndexesThatPass_1.getIndexesThatPass(function (value) { return value > 5; });
+    getIndexesThatPass_1.getIndexesThatPass((value) => value > 5);
 }
 catch (e) {
     errorTriggered = true;
@@ -68,7 +68,7 @@ else
 // Test 7: should trigger error if second arg is not array:
 errorTriggered = false;
 try {
-    getIndexesThatPass_1.getIndexesThatPass(function (value) { return value > 5; }, {});
+    getIndexesThatPass_1.getIndexesThatPass((value) => value > 5, {});
 }
 catch (e) {
     errorTriggered = true;

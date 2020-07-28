@@ -1,7 +1,7 @@
 {
   "name": "@writetome51/array-get-indexes",
-  "version": "1.0.2",
-  "description": "array-handling functions that return indexes of items in the array",
+  "version": "2.0.0",
+  "description": "Functions that return indexes of items in an array",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -28,14 +28,15 @@
   "homepage": "https://github.com/writetome51/array-get-indexes#readme",
   "devDependencies": {},
   "dependencies": {
-    "error-if-not-integer": "~1.0.0",
-    "error-if-not-populated-array": "~1.0.1",
-    "error-if-not-primitive-or-array": "~1.0.2",
+    "error-if-not-integer": "^2.0.0",
+    "error-if-length-is-zero": "^1.0.1",
+    "error-if-not-primitive-or-array": "^1.0.3",
     "error-if-not-primitive": "~1.0.0",
     "error-if-not-function": "~1.0.0",
-    "error-if-not-array": "~1.0.0",
-    "@writetome51/arrays-match": "~1.0.5",
-    "@writetome51/array-get-copy": "~1.1.2",
-    "@writetome51/is-array-not-array": "~1.0.0"
+    "error-if-not-array": "^2.0.0",
+    "@writetome51/arrays-match": "^2.0.0",
+    "@writetome51/get-array-copy": "^1.0.0",
+    "@writetome51/is-array-not-array": "^2.0.0",
+    "@writetome51/get-index-for-reversed-array": "^1.0.2"
   }
 }

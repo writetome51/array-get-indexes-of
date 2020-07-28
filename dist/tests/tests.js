@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var getIndexesOf_1 = require("../privy/getIndexesOf");
-var getLastIndexOf_1 = require("../privy/getLastIndexOf");
-var arrays_match_1 = require("@writetome51/arrays-match");
-var arr = [1, 'h', [3], 1, 'h', [3], 1, 'h', [3], 1, 'h', [3], 1, 'h', [3]];
+const getIndexesOf_1 = require("../privy/getIndexesOf");
+const getLastIndexOf_1 = require("../privy/getLastIndexOf");
+const arrays_match_1 = require("@writetome51/arrays-match");
+let arr = [1, 'h', [3], 1, 'h', [3], 1, 'h', [3], 1, 'h', [3], 1, 'h', [3]];
 // Test 1
-var indexes = getIndexesOf_1.getIndexesOf(1, arr);
+let indexes = getIndexesOf_1.getIndexesOf(1, arr);
 if (arrays_match_1.arraysMatch(indexes, [0, 3, 6, 9, 12]))
     console.log('test 1 passed');
 else
@@ -29,7 +29,7 @@ if (arrays_match_1.arraysMatch(indexes, []))
 else
     console.log('test 4 failed');
 // Test 5: Should trigger error if first arg is object:
-var errorTriggered = false;
+let errorTriggered = false;
 try {
     getIndexesOf_1.getIndexesOf({}, arr);
 }
@@ -78,7 +78,7 @@ if (errorTriggered)
 else
     console.log('test 8 failed');
 // Test 9
-var lastIndex = getLastIndexOf_1.getLastIndexOf(1, arr);
+let lastIndex = getLastIndexOf_1.getLastIndexOf(1, arr);
 if (lastIndex === 12)
     console.log('test 9 passed');
 else

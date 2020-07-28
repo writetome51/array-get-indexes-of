@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var getFirstIndexOfArray_1 = require("../privy/getFirstIndexOfArray");
-var arr = [1, 2, 3, 4, [[1], [2]], 5, 6, 7, 8, 9, [[1], [2]]];
+const getFirstIndexOfArray_1 = require("../privy/getFirstIndexOfArray");
+let arr = [1, 2, 3, 4, [[1], [2]], 5, 6, 7, 8, 9, [[1], [2]]];
 // Test 1
-var index = getFirstIndexOfArray_1.getFirstIndexOfArray([[1], [2]], arr);
+let index = getFirstIndexOfArray_1.getFirstIndexOfArray([[1], [2]], arr);
 if (index === 4)
     console.log('test 1 passed');
 else
@@ -37,7 +37,7 @@ if (index === 4)
 else
     console.log('test 5 FAILED');
 // Test 6: Error should trigger if second arg is not array:
-var errorTriggered = false;
+let errorTriggered = false;
 try {
     getFirstIndexOfArray_1.getFirstIndexOfArray([], {});
 }

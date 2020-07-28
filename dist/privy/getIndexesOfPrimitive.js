@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var getIndexOfPrimitive_1 = require("./getIndexOfPrimitive");
+var getIndexOfNonArray_1 = require("./getIndexOfNonArray");
 function getIndexesOfPrimitive(primitive, array) {
     var indexes = [];
-    var index = getIndexOfPrimitive_1.getIndexOfPrimitive(primitive, array);
+    var index = getIndexOfNonArray_1.getIndexOfNonArray(primitive, array);
     while (index > -1) {
         indexes.push(index);
-        index = getIndexOfPrimitive_1.getIndexOfPrimitive(primitive, array, index + 1);
+        index = getIndexOfNonArray_1.getIndexOfNonArray(primitive, array, index + 1);
     }
     return indexes;
 }

@@ -1,18 +1,25 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var error_if_not_primitive_or_array_1 = require("error-if-not-primitive-or-array");
-var getIndexOfPrimitive_1 = require("./getIndexOfPrimitive");
-var getFirstIndexOfArray_1 = require("./getFirstIndexOfArray");
-var is_array_not_array_1 = require("@writetome51/is-array-not-array");
-// returns -1 if value being searched for isn't found.
-// value cannot be object.
+const getIndexOfNonArray_1 = require("./getIndexOfNonArray");
+const getFirstIndexOfArray_1 = require("./getFirstIndexOfArray");
+const is_array_not_array_1 = require("@writetome51/is-array-not-array");
+const getIndexesOf_1 = require("./getIndexesOf");
+// returns -1 if value isn't found.
 function getFirstIndexOf(value, array) {
-    error_if_not_primitive_or_array_1.errorIfNotPrimitiveOrArray(value);
-    if (is_array_not_array_1.isArray(value)) {
+    if (is_array_not_array_1.isArray(value))
         return getFirstIndexOfArray_1.getFirstIndexOfArray(value, array);
-    }
-    else { // if primitive...
-        return getIndexOfPrimitive_1.getIndexOfPrimitive(value, array);
-    }
+    else
+        return getIndexOfNonArray_1.getIndexOfNonArray(value, array);
 }
 exports.getFirstIndexOf = getFirstIndexOf;
+// `whichInstance` specifies which instance of `value` to search for.  By default it's the first
+// instance.  You can set it to a negative number to search from the end.
+// Returns -1 if value isn't found.
+function getIndexOf(value, array, whichInstance = 1) {
+    if (whichInstance === 1)
+        return getFirstIndexOf(value, array);
+    let indexes = getIndexesOf_1.getIndexesOf(value, array);
+    if (whichInstance < 0)
+        indexes.forEach();
+}
+exports.getIndexOf = getIndexOf;

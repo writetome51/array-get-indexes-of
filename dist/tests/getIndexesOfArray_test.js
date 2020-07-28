@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var getIndexesOfArray_1 = require("../privy/getIndexesOfArray");
-var arrays_match_1 = require("@writetome51/arrays-match");
-var arr = [1, 2, 3, 4, [[1], [2]], 5, 6, 7, 8, 9, [[1], [2]]];
+const getIndexesOfArray_1 = require("../privy/getIndexesOfArray");
+const arrays_match_1 = require("@writetome51/arrays-match");
+let arr = [1, 2, 3, 4, [[1], [2]], 5, 6, 7, 8, 9, [[1], [2]]];
 // Test 1
-var indexes = getIndexesOfArray_1.getIndexesOfArray([[1], [2]], arr);
+let indexes = getIndexesOfArray_1.getIndexesOfArray([[1], [2]], arr);
 if (arrays_match_1.arraysMatch(indexes, [4, 10]))
     console.log('test 1 passed');
 else
@@ -38,7 +38,7 @@ if (arrays_match_1.arraysMatch(indexes, [4, 10]))
 else
     console.log('test 5 FAILED');
 // Test 6: Error should trigger if second arg is not array:
-var errorTriggered = false;
+let errorTriggered = false;
 try {
     getIndexesOfArray_1.getIndexesOfArray([], {});
 }
