@@ -1,5 +1,7 @@
 import { getIndexOfNonArray } from '../privy/getIndexOfNonArray.js';
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10];
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 'ÔÒ∏∏”'];
+
+
 let errorTriggered = false;
 // Test 1: error is triggered if second arg is not array:
 try {
@@ -33,5 +35,17 @@ else console.log('test 3: FAILED.');
 
 // Test 4: If startingPosition is negative, it searches from end of array:
 result = getIndexOfNonArray(10, arr, -1);
-if (result === 11) console.log('test 4: passed.');
+if (result === -1) console.log('test 4: passed.');
 else console.log('test 4: FAILED.');
+
+
+// Test 5:
+result = getIndexOfNonArray(10, arr);
+if (result === 9) console.log('test 5: passed.');
+else console.log('test 5: FAILED.');
+
+
+// Test 6:
+result = getIndexOfNonArray('ÔÒ∏∏”', arr);
+if (result === 12) console.log('test 6: passed.');
+else console.log('test 6: FAILED.');

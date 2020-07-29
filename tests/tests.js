@@ -6,25 +6,25 @@ let indexes = getIndexesOf(1, arr);
 if (arraysMatch(indexes, [0, 3, 6, 9, 12]))
     console.log('test 1 passed');
 else
-    console.log('test 1 failed');
+    console.log('test 1 FAILED');
 // Test 2
 indexes = getIndexesOf('h', arr);
 if (arraysMatch(indexes, [1, 4, 7, 10, 13]))
     console.log('test 2 passed');
 else
-    console.log('test 2 failed');
+    console.log('test 2 FAILED');
 // Test 3
 indexes = getIndexesOf([3], arr);
 if (arraysMatch(indexes, [2, 5, 8, 11, 14]))
     console.log('test 3 passed');
 else
-    console.log('test 3 failed');
+    console.log('test 3 FAILED');
 // Test 4: If value not found, should return empty array:
 indexes = getIndexesOf(100, arr);
 if (arraysMatch(indexes, []))
     console.log('test 4 passed');
 else
-    console.log('test 4 failed');
+    console.log('test 4 FAILED');
 // Test 5: Should trigger error if first arg is object:
 let errorTriggered = false;
 try {
@@ -36,7 +36,7 @@ catch (e) {
 if (errorTriggered)
     console.log('test 5 passed');
 else
-    console.log('test 5 failed');
+    console.log('test 5 FAILED');
 // Test 6: should trigger error if only 1 arg is passed:
 errorTriggered = false;
 try {
@@ -49,7 +49,7 @@ catch (e) {
 if (errorTriggered)
     console.log('test 6 passed');
 else
-    console.log('test 6 failed');
+    console.log('test 6 FAILED');
 // Test 7: should trigger error if second arg is object:
 errorTriggered = false;
 try {
@@ -61,7 +61,7 @@ catch (e) {
 if (errorTriggered)
     console.log('test 7 passed');
 else
-    console.log('test 7 failed');
+    console.log('test 7 FAILED');
 // Test 8
 errorTriggered = false;
 try {
@@ -73,31 +73,31 @@ catch (e) {
 if (errorTriggered)
     console.log('test 8 passed');
 else
-    console.log('test 8 failed');
+    console.log('test 8 FAILED');
 // Test 9
 let lastIndex = getLastIndexOf(1, arr);
 if (lastIndex === 12)
     console.log('test 9 passed');
 else
-    console.log('test 9 failed');
+    console.log('test 9 FAILED');
 // Test 10
 lastIndex = getLastIndexOf('h', arr);
 if (lastIndex === 13)
     console.log('test 10 passed');
 else
-    console.log('test 10 failed');
+    console.log('test 10 FAILED');
 // Test 11
 lastIndex = getLastIndexOf([3], arr);
 if (lastIndex === 14)
     console.log('test 11 passed');
 else
-    console.log('test 11 failed');
+    console.log('test 11 FAILED');
 // Test 12: should return -1 if value not found:
 lastIndex = getLastIndexOf(100, arr);
 if (lastIndex === -1)
     console.log('test 12 passed');
 else
-    console.log('test 12 failed');
+    console.log('test 12 FAILED');
 // Test 13: should trigger error if first arg is object:
 errorTriggered = false;
 try {
@@ -109,7 +109,7 @@ catch (e) {
 if (errorTriggered)
     console.log('test 13 passed');
 else
-    console.log('test 13 failed');
+    console.log('test 13 FAILED');
 // Test 14: should trigger error if second arg is object:
 errorTriggered = false;
 try {
@@ -121,4 +121,4 @@ catch (e) {
 if (errorTriggered)
     console.log('test 14 passed');
 else
-    console.log('test 14 failed');
+    console.log('test 14 FAILED');

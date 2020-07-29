@@ -6,15 +6,16 @@ default it's the first instance.  You can set it to a negative number to
 search from the end.  
 
 ## How an Array is found
-(If `value` is Array and `array[i]` is Array, each item inside `array[i]` is checked to  
-see if it matches the item with the same index in `value`, using the `===`  
+If `value` is Array and `array[i]` is Array, each item inside `array[i]` is checked  
+to see if it matches the item with the same index in `value`, using the `===`  
 operator.  If those two items are both Arrays, the same algorithm is recursively  
 run.
 
 
-# getIndexesOf(value, array): number[]
+# getIndexesOf(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;howMany?: number | 'all' = 'all'<br>): number[]
 
-Returns all indexes of `value` in `array`.  
+Returns all indexes of `value` in `array`.  If you don't need every index, set  
+`howMany` to desired number to speed up execution.
 
 
 ## Installation
