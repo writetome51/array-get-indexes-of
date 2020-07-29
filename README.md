@@ -6,7 +6,7 @@ default it's the first instance.  You can set it to a negative number to
 search from the end.  
 
 ## How an Array is found
-(If `value` is Array and `array[i]` is Array, each item inside it is checked to  
+(If `value` is Array and `array[i]` is Array, each item inside `array[i]` is checked to  
 see if it matches the item with the same index in `value`, using the `===`  
 operator.  If those two items are both Arrays, the same algorithm is recursively  
 run.
@@ -16,21 +16,12 @@ run.
 
 Returns all indexes of `value` in `array`.  
 
-```
-Example:
-
-let arr = ['a', 'boy', 'is', 'playing', 'in', 'the', 'street'];
-
-let stringsLongerThanThree = getIndexesThatPass((value) => value.length > 3,  arr);
-// stringsLongerThanThree === [3, 6]
-```
 
 ## Installation
-`npm i  @writetome51/array-get-indexes`
+`npm i  @writetome51/array-get-indexes-of`
 
 
 ## Loading
 ```js
-import {getFirstIndexOf, getLastIndexOf, getIndexOfNonArray, getIndexesOf, getIndexesThatPass} 
-    from '@writetome51/array-get-indexes'
+import {getIndexOf, getIndexesOf} from '@writetome51/array-get-indexes-of'
 ```

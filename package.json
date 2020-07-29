@@ -1,5 +1,5 @@
 {
-  "name": "@writetome51/array-get-indexes",
+  "name": "@writetome51/array-get-indexes-of",
   "version": "2.0.0",
   "description": "Functions that return indexes of items in an array",
   "type": "module",
@@ -31,9 +31,6 @@
   "dependencies": {
     "error-if-not-integer": "^2.0.0",
     "error-if-length-is-zero": "^1.0.1",
-    "error-if-not-primitive-or-array": "^1.0.3",
-    "error-if-not-primitive": "~1.0.0",
-    "error-if-not-function": "~1.0.0",
     "error-if-not-array": "^2.0.0",
     "@writetome51/arrays-match": "^2.0.0",
     "@writetome51/get-array-copy": "^1.0.0",
