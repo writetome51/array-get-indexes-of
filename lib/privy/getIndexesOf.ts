@@ -15,3 +15,5 @@ export function getIndexesOf(
 
 	else return getIndexesOfNonArray(value, array, howMany);
 }
+
+

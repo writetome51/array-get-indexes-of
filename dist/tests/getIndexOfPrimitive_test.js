@@ -1,4 +1,4 @@
-import { getIndexOfNonArray } from '../privy/getIndexOfNonArray';
+import { getIndexOfNonArray } from '../privy/getIndexOfNonArray.js';
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10];
 let errorTriggered = false;
 // Test 1: error is triggered if second arg is not array:

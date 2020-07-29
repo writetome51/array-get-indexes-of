@@ -1,5 +1,4 @@
 import { getIndexesOf } from '../privy/getIndexesOf';
-import { getLastIndexOf } from '../privy/getLastIndexOf';
 import { arraysMatch } from '@writetome51/arrays-match';
 
 

@@ -1,4 +1,4 @@
-import { getIndexesOfNonArray } from '../privy/getIndexesOfNonArray';
+import { getIndexesOfNonArray } from '../privy/getIndexesOfNonArray.js';
 import { arraysMatch } from '@writetome51/arrays-match';
 let arr = [1, 2, 3, 4, [[1], [2]], 1, 2, 3, 4, [[1], [2]]];
 // Test 1
@@ -71,3 +71,4 @@ if (errorTriggered)
     console.log('test 8 passed');
 else
     console.log('test 8 FAILED');
+//
