@@ -3,11 +3,7 @@
   "version": "2.0.0",
   "description": "Functions that return indexes of items in an array",
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "tsc"
-  },
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/writetome51/array-get-indexes.git"

@@ -1,4 +1,4 @@
-import { getIndexesOf } from '../privy/getIndexesOf';
+import { getIndexesOf } from '../privy/getIndexesOf.js';
 import { arraysMatch } from '@writetome51/arrays-match';
 let arr = [1, 'h', [3], 1, 'h', [3], 1, 'h', [3], 1, 'h', [3], 1, 'h', [3]];
 // Test 1

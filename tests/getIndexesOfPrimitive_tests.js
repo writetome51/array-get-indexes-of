@@ -1,4 +1,4 @@
-import { getIndexesOfNonArray } from '../privy/getIndexesOfNonArray.js';
+import { getIndexesOfNonArray } from 'privy/getIndexesOfNonArray.js';
 import { arraysMatch } from '@writetome51/arrays-match';
 let arr = [1, 2, 3, 4, [[1], [2]], 1, 2, 3, 4, [[1], [2]]];
 // Test 1
