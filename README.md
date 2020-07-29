@@ -1,24 +1,21 @@
 # getIndexOf(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value, array, whichInstance? = 1<br>): number
 
-Returns index of `value` found in `array`.  
-Returns -1 if `value` isn't found.  
-Optional `whichInstance` specifies which instance of `value` to search for.  
-By default it's set to the first instance.  You can set it to a negative number to  
+Returns index of `value` found in `array`.  Returns -1 if `value` isn't found.  
+Optional `whichInstance` specifies which instance of `value` to search for.  By  
+default it's the first instance.  You can set it to a negative number to  
 search from the end.  
-(If `value` is array, a match is found by executingloop executes to see if each item  in `array[i]` is
- identical to each item in `value`, and  
-if true, it's a match)
+
+## How an Array is found
+(If `value` is Array, a match is not found via `value === array[i]`.  Instead, if  
+`array[i]` is Array, each item inside it is checked to see if it matches the item  
+with the same index in `value`, using the `===` operator.  If those two items are  
+both Arrays, the same algorithm is recursively run.
 
 
 # getIndexesOf(value, array): number[]
 
 Returns all indexes of `value` in `array`.  
 
-
-# getIndexesThatPass(testFunction, array): number[]
-
-Returns all indexes of items that pass the `testFunction`.  
-`testFunction = function(currentValue, currentIndex?, theArray?): boolean`
 ```
 Example:
 

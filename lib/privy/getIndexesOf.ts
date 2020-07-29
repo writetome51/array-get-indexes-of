@@ -13,5 +13,5 @@ export function getIndexesOf(
 ): number[] {
 	if (isArray(value)) return getIndexesOfArray(value, array, howMany);
 
-	else return getIndexesOfNonArray(value, array);
+	else return getIndexesOfNonArray(value, array, howMany);
 }

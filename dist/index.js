@@ -1,12 +1,2 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var getFirstIndexOf_1 = require("./privy/getFirstIndexOf");
-exports.getFirstIndexOf = getFirstIndexOf_1.getFirstIndexOf;
-var getLastIndexOf_1 = require("./privy/getLastIndexOf");
-exports.getLastIndexOf = getLastIndexOf_1.getLastIndexOf;
-var getIndexOfNonArray_1 = require("./privy/getIndexOfNonArray");
-exports.getIndexOfNonArray = getIndexOfNonArray_1.getIndexOfNonArray;
-var getIndexesOf_1 = require("./privy/getIndexesOf");
-exports.getIndexesOf = getIndexesOf_1.getIndexesOf;
-var getIndexesThatPass_1 = require("./privy/getIndexesThatPass");
-exports.getIndexesThatPass = getIndexesThatPass_1.getIndexesThatPass;
+export { getIndexOf } from './privy/getIndexOf';
+export { getIndexesOf } from './privy/getIndexesOf';

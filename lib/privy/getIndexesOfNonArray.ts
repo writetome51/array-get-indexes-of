@@ -2,6 +2,7 @@ import { getIndexOfNonArray } from './getIndexOfNonArray';
 
 
 // If you don't need every index, set `howMany` to desired number to speed up execution.
+// Example: if howMany === 2, it returns the first 2 found indexes.
 
 export function getIndexesOfNonArray(
 	value,
