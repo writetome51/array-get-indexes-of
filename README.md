@@ -6,10 +6,10 @@ default it's the first instance.  You can set it to a negative number to
 search from the end.  
 
 ## How an Array is found
-(If `value` is Array, a match is not found via `value === array[i]`.  Instead, if  
-`array[i]` is Array, each item inside it is checked to see if it matches the item  
-with the same index in `value`, using the `===` operator.  If those two items are  
-both Arrays, the same algorithm is recursively run.
+(If `value` is Array and `array[i]` is Array, each item inside it is checked to  
+see if it matches the item with the same index in `value`, using the `===`  
+operator.  If those two items are both Arrays, the same algorithm is recursively  
+run.
 
 
 # getIndexesOf(value, array): number[]

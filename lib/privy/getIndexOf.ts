@@ -7,12 +7,11 @@ import { getIndexesOf } from './getIndexesOf';
 
 export function getIndexOf(value, array, whichInstance = 1): number {
 	let indexes: number[];
-	let howMany = whichInstance;
 
 	if (whichInstance < 0) {
-		howMany = -(whichInstance);
+		whichInstance = -(whichInstance);
 		array = array.reverse();
 	}
-	indexes = getIndexesOf(value, array, howMany);
-	return (indexes.length ? indexes[whichInstance - 1] : -1);
+	indexes = getIndexesOf(value, array, whichInstance);
+	return (indexes.length ? indexes[indexes.length - 1] : -1);
 }
