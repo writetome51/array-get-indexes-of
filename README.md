@@ -14,7 +14,7 @@ run.
 
 # getIndexesOf(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;howMany?: number | 'all' = 'all'<br>): number[]
 
-Returns all indexes of `value` in `array`.  If you don't need every index, set  
+Returns indexes of `value` in `array`.  If you don't need every index, set  
 `howMany` to desired number to speed up execution.
 
 
