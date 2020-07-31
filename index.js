@@ -16,16 +16,11 @@ export function getIndexOf(value, array, whichInstance = 1) {
 
 	if (whichInstance < 0) arrCopy.reverse();
 	indexes = getIndexesOf(value, arrCopy, absoluteInstance);
-	if (whichInstance < 0) changeIndexesForReversedArray(indexes, arrCopy);
-
-	return (indexes.length ? indexes[indexes.length - 1] : -1);
-
-
-	function changeIndexesForReversedArray(indexes, arrCopy) {
-		let i = -1;
-		while (++i < indexes.length) indexes[i] = getIndexForReversedArray(indexes[i], arrCopy.length);
-	}
-
+	if (indexes.length === 0) return -1;
+	
+	let index = indexes[indexes.length - 1];
+	if (whichInstance < 0) index = getIndexForReversedArray(index, arrCopy.length);
+	return index;
 }
 
 

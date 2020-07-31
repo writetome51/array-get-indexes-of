@@ -21,6 +21,18 @@ if (arraysMatch(indexes, [2, 5, 8, 11, 14])) console.log('test 3 passed');
 else console.log('test 3 FAILED');
 
 
+// Test 3
+indexes = getIndexesOf([3], arr, 1);
+if (arraysMatch(indexes, [2])) console.log('test 3A passed');
+else console.log('test 3A FAILED');
+
+
+// Test 3
+indexes = getIndexesOf([3], arr, -1);
+if (arraysMatch(indexes, [])) console.log('test 3B passed');
+else console.log('test 3B FAILED');
+
+
 // Test 4: If value not found, should return empty array:
 indexes = getIndexesOf(100, arr);
 if (arraysMatch(indexes, [])) console.log('test 4 passed');
