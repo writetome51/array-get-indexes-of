@@ -12,10 +12,10 @@ import {isArray} from '@writetome51/is-array-not-array';
 
 export function getIndexOf(value, array, whichInstance = 1) {
 	errorIfNotInteger(whichInstance);
-	let indexes, absoluteInstance = Math.abs(whichInstance), arrCopy = getArrayCopy(array);
+	let absoluteInstance = Math.abs(whichInstance), arrCopy = getArrayCopy(array);
 
 	if (whichInstance < 0) arrCopy.reverse();
-	indexes = getIndexesOf(value, arrCopy, absoluteInstance);
+	let indexes = getIndexesOf(value, arrCopy, absoluteInstance);
 	if (indexes.length === 0) return -1;
 	
 	let index = indexes[indexes.length - 1];
