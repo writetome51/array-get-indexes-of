@@ -24,5 +24,5 @@ Returns indexes of `value` in `array`.  If you don't need every index, set
 
 ## Loading
 ```js
-import {getIndexOf, getIndexesOf} from '@writetome51/array-get-indexes-of-of'
+import {getIndexOf, getIndexesOf} from '@writetome51/array-get-indexes-of'
 ```
