@@ -1,4 +1,4 @@
-import {getIndexOfNonArray} from 'privy/__getIndexOfNonArray.js';
+import {getIndexOfNonArray} from './__getIndexOfNonArray.js';
 
 
 export function getIndexesOfNonArray(value, array, howMany) {

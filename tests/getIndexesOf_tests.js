@@ -1,4 +1,4 @@
-import { getIndexesOf } from '../privy/getIndexesOf.js';
+import { getIndexesOf } from '../index.js';
 import { arraysMatch } from '@writetome51/arrays-match';
 
 let arr = [1, 'h', [3], 1, 'h', [3], 1, 'h', [3], 1, 'h', [3], 1, 'h', [3]];
@@ -27,17 +27,7 @@ if (arraysMatch(indexes, [])) console.log('test 4 passed');
 else console.log('test 4 FAILED');
 
 
-// Test 5: Should trigger error if first arg is object:
 let errorTriggered = false;
-try {
-    getIndexesOf({}, arr);
-}
-catch (e) {
-    errorTriggered = true;
-}
-if (errorTriggered) console.log('test 5 passed');
-else console.log('test 5 FAILED');
-
 
 // Test 6: should trigger error if only 1 arg is passed:
 errorTriggered = false;

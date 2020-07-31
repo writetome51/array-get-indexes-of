@@ -1,6 +1,7 @@
+import {errorIfNotInteger} from 'error-if-not-integer';
 import {getArrayCopy} from '@writetome51/get-array-copy';
-import {getIndexesOfArray} from 'privy/__getIndexesOfArray.js';
-import {getIndexesOfNonArray} from 'privy/__getIndexesOfNonArray.js';
+import {getIndexesOfArray} from './privy/__getIndexesOfArray.js';
+import {getIndexesOfNonArray} from './privy/__getIndexesOfNonArray.js';
 import {getIndexForReversedArray} from '@writetome51/get-index-for-reversed-array';
 import {isArray} from '@writetome51/is-array-not-array';
 
@@ -10,12 +11,13 @@ import {isArray} from '@writetome51/is-array-not-array';
 // Returns -1 if `value` isn't found.
 
 export function getIndexOf(value, array, whichInstance = 1) {
+	errorIfNotInteger(whichInstance);
 	let indexes, absoluteInstance = Math.abs(whichInstance), arrCopy = getArrayCopy(array);
+
 	if (whichInstance < 0) arrCopy.reverse();
-
 	indexes = getIndexesOf(value, arrCopy, absoluteInstance);
-
 	if (whichInstance < 0) changeIndexesForReversedArray(indexes, arrCopy);
+
 	return (indexes.length ? indexes[indexes.length - 1] : -1);
 
 
