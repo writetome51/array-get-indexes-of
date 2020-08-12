@@ -8,6 +8,11 @@ let indexes = getIndexesOf(1, arr);
 if (arraysMatch(indexes, [0, 3, 6, 9, 12])) console.log('test 1 passed');
 else console.log('test 1 FAILED');
 
+// Test 1A: make sure original array is unchanged:
+if (arraysMatch(arr, [1, 'h', [3], 1, 'h', [3], 1, 'h', [3], 1, 'h', [3], 1, 'h', [3]]))
+	console.log('test 1A passed');
+else console.log('test 1A FAILED');
+
 
 // Test 2
 indexes = getIndexesOf('h', arr);

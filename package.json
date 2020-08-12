@@ -1,9 +1,10 @@
 {
   "name": "@writetome51/array-get-indexes-of",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Functions that return indexes of items in an array",
   "type": "module",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/writetome51/array-get-indexes-of.git"
@@ -25,11 +26,12 @@
   "homepage": "https://github.com/writetome51/array-get-indexes-of#readme",
   "devDependencies": {},
   "dependencies": {
-    "error-if-not-integer": "^2.0.0",
-    "error-if-length-is-zero": "^1.0.1",
-    "@writetome51/arrays-match": "^2.0.0",
+    "@arr/reverse": "^1.0.1",
+    "@writetome51/arrays-match": "^2.0.1",
     "@writetome51/get-array-copy": "^1.0.0",
+    "@writetome51/get-reverse-index": "^1.0.0",
     "@writetome51/is-array-not-array": "^2.0.0",
-    "@writetome51/get-index-for-reversed-array": "^2.0.0"
+    "error-if-length-is-zero": "^1.0.1",
+    "error-if-not-integer": "^2.0.0"
   }
 }

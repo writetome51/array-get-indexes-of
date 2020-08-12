@@ -94,6 +94,11 @@ else console.log('test 12 FAILED');
 arr = [];
 let i = -1;
 while (++i < 1000000) arr.push('');
-result = getIndexOf('', arr, 1000000);
+console.time('check');
+
+result = getIndexOf('', arr, -1);
 if (result === 999999) console.log('test 13 passed');
 else console.log('test 13 FAILED');
+
+console.timeEnd('check');
+// avg speed: 12.7ms
