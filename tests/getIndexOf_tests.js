@@ -2,10 +2,16 @@ import {getIndexOf} from '../index.js';
 
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 'ÔÒ∏∏”', 16, 10];
+let arrCopy = arr;
 
 let result = getIndexOf(null, []);
-if (result === -1) console.log('test 1 passed');
-else console.log('test 1 FAILED');
+if (result === -1) console.log('test 0 passed');
+else console.log('test 0 FAILED');
+
+result = getIndexOf(10, arr, -1);
+if (arr === arrCopy) console.log('test 0A passed');
+else console.log('test 0A FAILED');
+
 
 // Test 1: error should happen if second arg is not array:
 let errorTriggered = false;

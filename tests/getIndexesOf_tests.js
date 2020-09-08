@@ -2,6 +2,7 @@ import { getIndexesOf } from '../index.js';
 import { arraysMatch } from '@writetome51/arrays-match';
 
 let arr = [1, 'h', [3], 1, 'h', [3], 1, 'h', [3], 1, 'h', [3], 1, 'h', [3]];
+let arrCopy = arr;
 
 // Test 1
 let indexes = getIndexesOf(1, arr);
@@ -9,8 +10,7 @@ if (arraysMatch(indexes, [0, 3, 6, 9, 12])) console.log('test 1 passed');
 else console.log('test 1 FAILED');
 
 // Test 1A: make sure original array is unchanged:
-if (arraysMatch(arr, [1, 'h', [3], 1, 'h', [3], 1, 'h', [3], 1, 'h', [3], 1, 'h', [3]]))
-	console.log('test 1A passed');
+if (arr === arrCopy) console.log('test 1A passed');
 else console.log('test 1A FAILED');
 
 
