@@ -3,11 +3,14 @@ import {getIndexOf} from '../index.js';
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 'ÔÒ∏∏”', 16, 10];
 
+let result = getIndexOf(null, []);
+if (result === -1) console.log('test 1 passed');
+else console.log('test 1 FAILED');
 
 // Test 1: error should happen if second arg is not array:
 let errorTriggered = false;
 try {
-	let result = getIndexOf(5, 'abcdefgh');
+	console.log(getIndexOf('', 'abcdefgh'));
 } catch (e) {
 	errorTriggered = true;
 }
@@ -27,7 +30,7 @@ else console.log('test 2 FAILED');
 
 
 // Test 3: If value not found, it returns -1:
-let result = getIndexOf(100, arr);
+result = getIndexOf(100, arr);
 if (result === -1) console.log('test 3 passed');
 else console.log('test 3 FAILED');
 
@@ -93,12 +96,20 @@ else console.log('test 12 FAILED');
 // speed test
 arr = [];
 let i = -1;
-while (++i < 1000000) arr.push('');
-console.time('check');
+while (++i < 100) arr.push('');
 
-result = getIndexOf('', arr, -1);
-if (result === 999999) console.log('test 13 passed');
+console.time('check');
+result = getIndexOf('', arr);
+console.timeEnd('check');
+
+if (result === 0) console.log('test 13 passed');
 else console.log('test 13 FAILED');
 
+
+
+console.time('check');
+result = arr.indexOf('');
 console.timeEnd('check');
-// avg speed: 12.7ms
+if (result === 0) console.log('test 13 passed');
+else console.log('test 13 FAILED');
+

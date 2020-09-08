@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/array-get-indexes-of",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Functions that return indexes of items in an array",
   "type": "module",
   "main": "index.js",
@@ -27,11 +27,11 @@
   "devDependencies": {},
   "dependencies": {
     "@arr/reverse": "^1.0.1",
-    "@writetome51/arrays-match": "^2.0.1",
-    "@writetome51/get-array-copy": "^1.0.0",
-    "@writetome51/get-reverse-index": "^1.0.0",
-    "@writetome51/is-array-not-array": "^2.0.0",
-    "error-if-length-is-zero": "^1.0.1",
-    "error-if-not-integer": "^2.0.0"
+    "@writetome51/arrays-match": ">=2.0.1",
+    "@writetome51/get-array-copy": ">=1.0.0",
+    "@writetome51/get-reverse-index": ">=1.0.0",
+    "@writetome51/is-array-not-array": ">=2.0.0",
+    "error-if-not-array": ">=2.0.0",
+    "error-if-not-integer": ">=2.0.1"
   }
 }

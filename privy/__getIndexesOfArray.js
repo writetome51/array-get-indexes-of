@@ -1,15 +1,14 @@
 import {arraysMatch} from '@writetome51/arrays-match';
-import {errorIfLengthIsZero} from 'error-if-length-is-zero';
 import {isArray} from '@writetome51/is-array-not-array';
 
 
-export function getIndexesOfArray(arrayToSearchFor, arrayToSearchIn, howMany) {
-	errorIfLengthIsZero(arrayToSearchIn);
-
-	let indexes = [], i = -1, arrLength = arrayToSearchIn.length;
-	while (howMany > 0 && (++i < arrLength)) {
-
-		if (isArray(arrayToSearchIn[i]) && arraysMatch(arrayToSearchIn[i], arrayToSearchFor)) {
+export function getIndexesOfArray(arrToSearchFor, arrToSearchIn, howMany) {
+	for (
+		var indexes = [], i = 0, arrLength = arrToSearchIn.length;
+		howMany > 0 && (i < arrLength);
+		++i
+	) {
+		if (isArray(arrToSearchIn[i]) && arraysMatch(arrToSearchIn[i], arrToSearchFor)) {
 			indexes.push(i);
 			--howMany;
 		}

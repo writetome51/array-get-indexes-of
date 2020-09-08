@@ -1,3 +1,4 @@
+import {errorIfNotArray} from 'error-if-not-array';
 import {errorIfNotInteger} from 'error-if-not-integer';
 import {getArrayCopy} from '@writetome51/get-array-copy';
 import {getIndexesOfArray} from './privy/__getIndexesOfArray.js';
@@ -13,13 +14,16 @@ import reverse from '@arr/reverse';
 
 export function getIndexOf(value, array, whichInstance = 1) {
 	errorIfNotInteger(whichInstance);
-	let absoluteInstance = Math.abs(whichInstance), arrCopy = getArrayCopy(array);
+	let absoluteInstance = Math.abs(whichInstance);
 
-	if (whichInstance < 0) reverse(arrCopy);
-	let index = __getIndexOf(value, arrCopy, absoluteInstance);
+	if (whichInstance < 0) {
+		array = getArrayCopy(array);
+		reverse(array);
+	}
+	let index = __getIndexOf(value, array, absoluteInstance);
 	if (index === -1) return index;
-	if (whichInstance < 0) index = getReverseIndex(index, arrCopy.length);
 
+	if (whichInstance < 0) index = getReverseIndex(index, array.length);
 	return index;
 
 
@@ -38,6 +42,7 @@ export function getIndexOf(value, array, whichInstance = 1) {
 // If you don't need every index, set `howMany` to desired number to speed up execution.
 
 export function getIndexesOf(value, array, howMany = 'all') {
+	errorIfNotArray(array);
 	if (howMany === 'all') howMany = array.length;
 
 	if (isArray(value)) return getIndexesOfArray(value, array, howMany);
