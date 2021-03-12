@@ -17,6 +17,7 @@ export function getIndexesOfValueByIdenticalMatching(value, array, howMany) {
 
 export function getIndexesOfValueByIdenticalMatching_fromRight(value, array, howMany) {
 	howMany = Math.abs(howMany);
+
 	for (
 		var indexes = [], index = array.lastIndexOf(value);
 		howMany > 0 && index > -1;
@@ -46,6 +47,7 @@ export function getIndexesOfValueByArrayMatching(arrToSearchFor, arrToSearchIn, 
 
 export function getIndexesOfValueByArrayMatching_fromRight(arrToSearchFor, arrToSearchIn, howMany) {
 	howMany = Math.abs(howMany);
+
 	for (
 		var indexes = [], i = arrToSearchIn.length - 1;
 		howMany > 0 && (i > -1);

@@ -26,7 +26,6 @@
   "homepage": "https://github.com/writetome51/array-get-indexes-of#readme",
   "devDependencies": {},
   "dependencies": {
-    "@arr/reverse": "^1.0.1",
     "@writetome51/arrays-match": ">=2.0.1",
     "@writetome51/get-array-copy": ">=1.0.0",
     "@writetome51/get-reverse-index": ">=1.0.0",

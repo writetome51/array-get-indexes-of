@@ -6,7 +6,9 @@ default it's the first instance.  You can set it to a negative number to
 search from the end.  
 
 ## How an Array is found
-If `value` is Array and `array[i]` is Array, each item inside `array[i]` is checked  
+If `value` is Array, identical matching via `===` is tried first. If there's no match,  
+`value` is searched for using this algorithm:  
+For each `i` in `array`:  if `array[i]` is Array, each item inside `array[i]` is checked  
 to see if it matches the item with the same index in `value`, using the `===`  
 operator.  If those two items are both Arrays, the same algorithm is recursively  
 run.
