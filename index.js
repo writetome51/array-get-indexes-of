@@ -27,17 +27,25 @@ export function getIndexesOf(value, array, howMany = 'all') {
 	errorIfNotArray(array);
 	if (howMany === 'all') howMany = array.length;
 
-	let arrayMatchFn = 'getIndexesOfValueByArrayMatching';
-	let identicalMatchFn = 'getIndexesOfValueByIdenticalMatching';
-	if (howMany < 0) {
-		arrayMatchFn += '_fromRight';
-		identicalMatchFn += '_fromRight';
-	}
+	let {arrayMatchFn, identicalMatchFn} = getMatchingFnNames(howMany < 0);
 
 	let indexes = matchingFns[identicalMatchFn](value, array, howMany);
 	if (indexes.length === 0) {
-		// if `value` is array, we try one more thing:
+		// if `value` is array, we try array matching algorithm:
 		if (isArray(value)) indexes = matchingFns[arrayMatchFn](value, array, howMany);
 	}
 	return indexes;
+
+
+	function getMatchingFnNames(searchingFromEnd) {
+		let names = {
+			arrayMatchFn: 'getIndexesByArrayMatching',
+			identicalMatchFn: 'getIndexesByIdenticalMatching'
+		};
+		if (searchingFromEnd) {
+			for (let i = 0, keys = Object.keys(names);  i < 2;  ++i)  names[keys[i]] += '_fromRight';
+		}
+		return names;
+	}
+
 }

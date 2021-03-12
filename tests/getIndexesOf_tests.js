@@ -32,10 +32,16 @@ if (arraysMatch(indexes, [2])) console.log('test 3A passed');
 else console.log('test 3A FAILED');
 
 
-// Test 3
+// Test 3B
 indexes = getIndexesOf([3], arr, -1);
-if (arraysMatch(indexes, [])) console.log('test 3B passed');
+if (arraysMatch(indexes, [14])) console.log('test 3B passed');
 else console.log('test 3B FAILED');
+
+
+// Test 3C
+indexes = getIndexesOf([3], arr, -3);
+if (arraysMatch(indexes, [14, 11, 8])) console.log('test 3C passed');
+else console.log('test 3C FAILED');
 
 
 // Test 4: If value not found, should return empty array:
