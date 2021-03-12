@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/array-get-indexes-of",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "Functions that return indexes of items in an array",
   "type": "module",
   "main": "index.js",
