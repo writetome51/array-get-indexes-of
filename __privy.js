@@ -1,5 +1,6 @@
 import {arraysMatch} from '@writetome51/arrays-match';
 import {isArray} from '@writetome51/is-array-not-array';
+import {append, prepend} from '@writetome51/array-append-prepend';
 
 
 export function getIndexesByIdenticalMatching(value, array, howMany) {
@@ -8,7 +9,7 @@ export function getIndexesByIdenticalMatching(value, array, howMany) {
 		howMany > 0 && index > -1;
 		--howMany
 	) {
-		indexes.push(index);
+		append(index, indexes);
 		index = array.indexOf(value, index + 1);
 	}
 	return indexes;
@@ -23,7 +24,7 @@ export function getIndexesByIdenticalMatching_fromRight(value, array, howMany) {
 		howMany > 0 && index > -1;
 		--howMany
 	) {
-		indexes.push(index);
+		prepend(index, indexes);
 		index = array.lastIndexOf(value, index - 1);
 	}
 	return indexes;
@@ -37,7 +38,7 @@ export function getIndexesByArrayMatching(arrToSearchFor, arrToSearchIn, howMany
 		++i
 	) {
 		if (isArray(arrToSearchIn[i]) && arraysMatch(arrToSearchIn[i], arrToSearchFor)) {
-			indexes.push(i);
+			append(i, indexes);
 			--howMany;
 		}
 	}
@@ -54,7 +55,7 @@ export function getIndexesByArrayMatching_fromRight(arrToSearchFor, arrToSearchI
 		--i
 	) {
 		if (isArray(arrToSearchIn[i]) && arraysMatch(arrToSearchIn[i], arrToSearchFor)) {
-			indexes.push(i);
+			prepend(i, indexes);
 			--howMany;
 		}
 	}

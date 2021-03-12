@@ -10,7 +10,12 @@ if (arraysMatch(indexes, [0, 3, 6, 9, 12])) console.log('test 1 passed');
 else console.log('test 1 FAILED');
 
 // Test 1A: make sure original array is unchanged:
-if (arr === arrCopy) console.log('test 1A passed');
+if (arr === arrCopy &&
+	arraysMatch(
+		arr,
+		[1, 'h', [3], 1, 'h', [3], 1, 'h', [3], 1, 'h', [3], 1, 'h', [3]]
+	)
+) console.log('test 1A passed');
 else console.log('test 1A FAILED');
 
 
@@ -40,8 +45,14 @@ else console.log('test 3B FAILED');
 
 // Test 3C
 indexes = getIndexesOf([3], arr, -3);
-if (arraysMatch(indexes, [14, 11, 8])) console.log('test 3C passed');
+if (arraysMatch(indexes, [8, 11, 14])) console.log('test 3C passed');
 else console.log('test 3C FAILED');
+
+
+// Test 3D
+indexes = getIndexesOf('h', arr, -3);
+if (arraysMatch(indexes, [7, 10, 13])) console.log('test 3D passed');
+else console.log('test 3D FAILED');
 
 
 // Test 4: If value not found, should return empty array:
@@ -87,3 +98,5 @@ catch (e) {
 }
 if (errorTriggered) console.log('test 8 passed');
 else console.log('test 8 FAILED');
+
+

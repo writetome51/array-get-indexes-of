@@ -46,7 +46,7 @@ result = getIndexOf(10, arr, -1);
 if (result === 14) console.log('test 4 passed');
 else console.log('test 4 FAILED');
 
-// Test 4: If `whichInstance` is negative, it searches from end of array:
+// Test 4A: If `whichInstance` is negative, it searches from end of array:
 result = getIndexOf(10, arr, -2);
 if (result === 11) console.log('test 4A passed');
 else console.log('test 4A FAILED');
@@ -70,7 +70,7 @@ if (result === 12) console.log('test 7 passed');
 else console.log('test 7 FAILED');
 
 
-arr = [1, [1], 2, [1, 2, [2]], 3, 4, [1, 2, [2]], [1], [1]];
+arr = [1,  [1],  2,  [1, 2, [2]],  3,  4,  [1, 2, [2]],  [1],  [1]];
 result = getIndexOf([1, 2, [2]], arr);
 if (result === 3) console.log('test 8 passed');
 else console.log('test 8 FAILED');
@@ -81,9 +81,15 @@ if (result === 6) console.log('test 9 passed');
 else console.log('test 9 FAILED');
 
 
-result = getIndexOf([1, 2, [2]], arr, 10);
-if (result === 6) console.log('test 10 passed');
+// If `whichInstance` is greater than num indexes available, the last available index is returned.
+result = getIndexOf(3, arr, 4);
+if (result === 4) console.log('test 10 passed');
 else console.log('test 10 FAILED');
+
+
+result = getIndexOf(1, arr, 1);
+if (result === 0) console.log('test 10A passed');
+else console.log('test 10A FAILED');
 
 
 let obj = {p: {a: 1}};
@@ -97,6 +103,18 @@ arr = [1, 2, obj, 3, 4, obj];
 result = getIndexOf(obj, arr, -2);
 if (result === 2) console.log('test 12 passed');
 else console.log('test 12 FAILED');
+
+
+arr = [1, 2, obj, 3, 4, obj,1, 2, obj, 3, 4, obj,1, 2, obj, 3, 4, obj,1, 2, obj, 3, 4, obj,1, 2, obj, 3, 4, obj,1, 2, obj, 3, 4, obj,1, 2, obj, 3, 4, obj,1, 2, obj, 3, 4, obj,1, 2, obj, 3, 4, obj,1, 2, obj, 3, 4, obj,1, 2, obj, 3, 4, obj,1, 2, obj, 3, 4, obj,1, 2, obj, 3, 4, obj,1, 2, obj, 3, 4, obj,1, 2, obj, 3, 4, obj,1, 2, obj, 3, 4, obj,1, 2, obj, 3, 4, obj,1, 2, obj, 3, 4, obj,1, 2, obj, 3, 4, obj,1, 2, obj, 3, 4, obj,1, 2, obj, 3, 4, obj,1, 2, obj, 3, 4, obj,1, 2, obj, 3, 4, obj,1, 2, obj, 3, 4, obj];
+
+result = getIndexOf(obj, arr, -2);
+if (result === arr.length - 4) console.log('test 12A passed');
+else console.log('test 12A FAILED');
+
+
+result = getIndexOf(obj, arr, -5);
+if (result === arr.length - 13) console.log('test 12B passed');
+else console.log('test 12B FAILED');
 
 
 // speed test

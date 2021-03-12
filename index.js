@@ -13,15 +13,17 @@ export function getIndexOf(value, array, whichInstance = 1) {
 
 	let indexes = getIndexesOf(value, array, whichInstance);
 	let idxsLength = indexes.length;
+	if (idxsLength === 0) return -1;
 
-	return idxsLength > 0 ? indexes[idxsLength - 1] : -1;
+	const indexToGet = (whichInstance < 0) ? 0 : (idxsLength - 1);
+	return indexes[indexToGet];
 }
 
 
 // Returns empty array if `value` isn't found.
 // If you don't need every index, set `howMany` to desired number to speed up execution.
-// You can set `howMany` to negative number to search from the end (i.e., -2 gets indexes of
-// the last 2 instances of `value`).
+// You can set `howMany` to negative number to search from the end (i.e., -2 gets the last
+// 2 indexes of `value`).
 
 export function getIndexesOf(value, array, howMany = 'all') {
 	errorIfNotArray(array);
@@ -43,7 +45,7 @@ export function getIndexesOf(value, array, howMany = 'all') {
 			identicalMatchFn: 'getIndexesByIdenticalMatching'
 		};
 		if (searchingFromEnd) {
-			for (let i = 0, keys = Object.keys(names);  i < 2;  ++i)  names[keys[i]] += '_fromRight';
+			for (let i = 0, keys = Object.keys(names); i < 2; ++i) names[keys[i]] += '_fromRight';
 		}
 		return names;
 	}

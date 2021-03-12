@@ -1,7 +1,7 @@
 {
   "name": "@writetome51/array-get-indexes-of",
   "version": "3.0.0",
-  "description": "Functions that return indexes of items in an array",
+  "description": "Functions that return indexes of items in an array. Optional arguments give you more flexibility than Array.prototype.indexOf()",
   "type": "module",
   "main": "index.js",
   "types": "index.d.ts",
@@ -15,6 +15,7 @@
     "get",
     "find",
     "index",
+    "index-of",
     "indexes",
     "data"
   ],
@@ -26,9 +27,8 @@
   "homepage": "https://github.com/writetome51/array-get-indexes-of#readme",
   "devDependencies": {},
   "dependencies": {
+    "@writetome51/array-append-prepend": "^3.0.0",
     "@writetome51/arrays-match": ">=2.0.1",
-    "@writetome51/get-array-copy": ">=1.0.0",
-    "@writetome51/get-reverse-index": ">=1.0.0",
     "@writetome51/is-array-not-array": ">=2.0.0",
     "error-if-not-array": ">=2.0.0",
     "error-if-not-integer": ">=2.0.1"
