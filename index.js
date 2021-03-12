@@ -1,11 +1,11 @@
 import {errorIfNotArray} from 'error-if-not-array';
 import {errorIfNotInteger} from 'error-if-not-integer';
-import {getArrayCopy} from '@writetome51/get-array-copy';
-import {getIndexesOfArray} from './privy/__getIndexesOfArray.js';
-import {getIndexesOfNonArray} from './privy/__getIndexesOfNonArray.js';
-import {getReverseIndex} from '@writetome51/get-reverse-index';
+import {
+	getIndexesOfArray,
+	getIndexesOfValueByArrayMatching,
+	getIndexesOfValueByIdenticalMatching
+} from './__privy.js';
 import {isArray} from '@writetome51/is-array-not-array';
-import reverse from '@arr/reverse';
 
 
 // `whichInstance` specifies which instance of `value` to search for.  By default it's the first
@@ -14,27 +14,11 @@ import reverse from '@arr/reverse';
 
 export function getIndexOf(value, array, whichInstance = 1) {
 	errorIfNotInteger(whichInstance);
-	let absoluteInstance = Math.abs(whichInstance);
 
-	if (whichInstance < 0) {
-		array = getArrayCopy(array);
-		reverse(array);
-	}
-	let index = __getIndexOf(value, array, absoluteInstance);
-	if (index === -1) return index;
+	let indexes = getIndexesOf(value, array, whichInstance);
+	let idxsLength = indexes.length;
 
-	if (whichInstance < 0) index = getReverseIndex(index, array.length);
-	return index;
-
-
-	function __getIndexOf(value, arr, whichInstance) {
-		let indexes = getIndexesOf(value, arr, whichInstance);
-		let idxsLength = indexes.length;
-
-		if (idxsLength === 0) return -1;
-		return indexes[idxsLength - 1];
-	}
-
+	return idxsLength > 0 ? indexes[idxsLength - 1] : -1;
 }
 
 
@@ -45,7 +29,10 @@ export function getIndexesOf(value, array, howMany = 'all') {
 	errorIfNotArray(array);
 	if (howMany === 'all') howMany = array.length;
 
-	if (isArray(value)) return getIndexesOfArray(value, array, howMany);
-
-	else return getIndexesOfNonArray(value, array, howMany);
+	let indexes = getIndexesOfValueByIdenticalMatching(value, array, howMany);
+	if (indexes.length === 0) {
+		// if `value` is array, we try one more thing:
+		if (isArray(value)) indexes = getIndexesOfValueByArrayMatching(value, array, howMany);
+	}
+	return indexes;
 }
