@@ -1,4 +1,4 @@
-import {arraysMatch} from '@writetome51/arrays-match';
+import {isMatch} from '@writetome51/is-match';
 import {isArray} from '@writetome51/is-array-not-array';
 import {append, prepend} from '@writetome51/array-append-prepend';
 
@@ -37,7 +37,7 @@ export function getIndexesByArrayMatching(arrToSearchFor, arrToSearchIn, howMany
 		howMany > 0 && (i < arrLength);
 		++i
 	) {
-		if (isArray(arrToSearchIn[i]) && arraysMatch(arrToSearchIn[i], arrToSearchFor)) {
+		if (isArray(arrToSearchIn[i]) && isMatch(arrToSearchIn[i], arrToSearchFor)) {
 			append(i, indexes);
 			--howMany;
 		}
@@ -54,7 +54,7 @@ export function getIndexesByArrayMatching_fromRight(arrToSearchFor, arrToSearchI
 		howMany > 0 && (i > -1);
 		--i
 	) {
-		if (isArray(arrToSearchIn[i]) && arraysMatch(arrToSearchIn[i], arrToSearchFor)) {
+		if (isArray(arrToSearchIn[i]) && isMatch(arrToSearchIn[i], arrToSearchFor)) {
 			prepend(i, indexes);
 			--howMany;
 		}

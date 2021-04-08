@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/array-get-indexes-of",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Functions that return indexes of items in an array. Optional arguments give you more flexibility than Array.prototype.indexOf()",
   "type": "module",
   "main": "index.js",
@@ -28,7 +28,7 @@
   "devDependencies": {},
   "dependencies": {
     "@writetome51/array-append-prepend": "^3.0.0",
-    "@writetome51/arrays-match": ">=2.0.1",
+    "@writetome51/is-match": ">=0.0.1",
     "@writetome51/is-array-not-array": ">=2.0.0",
     "error-if-not-array": ">=2.0.0",
     "error-if-not-integer": ">=2.0.1"
