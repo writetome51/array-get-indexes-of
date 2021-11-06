@@ -6,7 +6,7 @@ import {append, prepend} from '@writetome51/array-append-prepend';
 export function getIndexesByIdenticalMatching(value, array, howMany) {
 	for (
 		var indexes = [], index = array.indexOf(value);
-		howMany > 0 && index > -1;
+		index > -1 && howMany > 0;
 		--howMany
 	) {
 		append(index, indexes);
@@ -21,7 +21,7 @@ export function getIndexesByIdenticalMatching_fromRight(value, array, howMany) {
 
 	for (
 		var indexes = [], index = array.lastIndexOf(value);
-		howMany > 0 && index > -1;
+		index > -1 && howMany > 0;
 		--howMany
 	) {
 		prepend(index, indexes);
