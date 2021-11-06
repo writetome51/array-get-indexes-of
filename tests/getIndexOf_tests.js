@@ -117,23 +117,25 @@ if (result === arr.length - 13) console.log('test 12B passed');
 else console.log('test 12B FAILED');
 
 
+
 // speed test
 arr = [];
 let i = -1;
-while (++i < 100) arr.push('');
+while (++i < 10) arr.push('');
+arr.push('a');
 
-console.time('check');
-result = getIndexOf('', arr);
-console.timeEnd('check');
+// Check speed of getIndexOf()
+let ms = Date.now();
+i = -1;
+while (++i < 100000000) result = getIndexOf('a', arr);
+ms = Date.now() - ms;
+console.log(ms);
 
-if (result === 0) console.log('test 13 passed');
-else console.log('test 13 FAILED');
 
-
-
-console.time('check');
-result = arr.indexOf('');
-console.timeEnd('check');
-if (result === 0) console.log('test 13 passed');
-else console.log('test 13 FAILED');
+// Check speed of .indexOf()
+ms = Date.now();
+i = -1;
+while (++i < 100000000) result = arr.indexOf('a');
+ms = Date.now() - ms;
+console.log(ms);
 

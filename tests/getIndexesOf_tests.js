@@ -1,4 +1,4 @@
-import { getIndexesOf } from '../index.js';
+import {getIndexesOf, getIndexOf} from '../index.js';
 import { isMatch } from '@writetome51/is-match';
 
 let arr = [1, 'h', [3], 1, 'h', [3], 1, 'h', [3], 1, 'h', [3], 1, 'h', [3]];
@@ -100,3 +100,18 @@ if (errorTriggered) console.log('test 8 passed');
 else console.log('test 8 FAILED');
 
 
+
+// speed test
+arr = [];
+let result;
+let i = -1;
+while (++i < 10000000) arr.push('');
+
+
+// Check speed of getIndexOf()
+let ms = Date.now();
+result = getIndexesOf('', arr, -250);
+ms = Date.now() - ms;
+console.log(ms);
+
+console.log(result);

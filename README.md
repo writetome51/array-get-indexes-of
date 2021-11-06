@@ -5,7 +5,7 @@ Returns index of `value` found in `array`. Returns -1 if `value` isn't found. Op
 first instance. You can set it to a negative number to search from the end.
 
 
-# getIndexesOf(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;howMany?: number | 'all' = 'all'<br>): number[]
+# getIndexesOf(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;howMany? = array.length<br>): number[]
 
 Returns indexes of `value` in `array`.  If you don't need every index, set `howMany` to  
 desired number to speed up execution.  You can set `howMany` to negative number to  
