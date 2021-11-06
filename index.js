@@ -1,19 +1,18 @@
 import {errorIfNotArray} from 'error-if-not-array';
 import {errorIfNotInteger} from 'error-if-not-integer';
-import * as matchingFns from './__privy.js';
 import {isArray} from '@writetome51/is-array-not-array';
+import * as matchingFns from './__privy.js';
 
 
 // `whichInstance` specifies which instance of `value` to search for.  By default it's the first
 // instance.  You can set it to a negative number to search from the end.
 // Returns -1 if `value` isn't found.
 
-export function getIndexOf(value, array, whichInstance = 1) {
-	errorIfNotInteger(whichInstance);
+export const getIndexOf = (value, array, whichInstance = 1) => {
 
 	let indexes = getIndexesOf(value, array, whichInstance);
 	let idxsLength = indexes.length;
-	if (idxsLength === 0) return -1;
+	if (!(idxsLength)) return -1;
 
 	const indexToGet = (whichInstance < 0) ? 0 : (idxsLength - 1);
 	return indexes[indexToGet];
@@ -25,29 +24,14 @@ export function getIndexOf(value, array, whichInstance = 1) {
 // You can set `howMany` to negative number to search from the end (i.e., -2 gets the last
 // 2 indexes of `value`).
 
-export function getIndexesOf(value, array, howMany = 'all') {
+export const getIndexesOf = (value, array, howMany = array.length) => {
 	errorIfNotArray(array);
-	if (howMany === 'all') howMany = array.length;
+	errorIfNotInteger(howMany);
+	if (!(array.length)) return [];
 
-	let {arrayMatchFn, identicalMatchFn} = getMatchingFnNames(howMany < 0);
+	let fnName = isArray(value) ?
+		'getIndexesByArrayMatching' : 'getIndexesByIdenticalMatching';
+	if (howMany < 0) fnName += '_fromRight';
 
-	let indexes = matchingFns[identicalMatchFn](value, array, howMany);
-	if (indexes.length === 0) {
-		// if `value` is array, we try array matching algorithm:
-		if (isArray(value)) indexes = matchingFns[arrayMatchFn](value, array, howMany);
-	}
-	return indexes;
-
-
-	function getMatchingFnNames(searchingFromEnd) {
-		let names = {
-			arrayMatchFn: 'getIndexesByArrayMatching',
-			identicalMatchFn: 'getIndexesByIdenticalMatching'
-		};
-		if (searchingFromEnd) {
-			for (let i = 0, keys = Object.keys(names); i < 2; ++i) names[keys[i]] += '_fromRight';
-		}
-		return names;
-	}
-
+	return matchingFns[fnName](value, array, howMany);
 }
