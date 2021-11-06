@@ -28,7 +28,6 @@
   "devDependencies": {},
   "dependencies": {
     "@writetome51/array-append-prepend": ">=3.0.0",
-    "@writetome51/get-arr-filled": ">=0.0.6",
     "@writetome51/is-array-not-array": ">=2.0.0",
     "@writetome51/is-match": ">=0.0.1",
     "error-if-not-array": ">=2.0.0",

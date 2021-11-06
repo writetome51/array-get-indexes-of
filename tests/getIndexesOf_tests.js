@@ -1,5 +1,6 @@
-import {getIndexesOf, getIndexOf} from '../index.js';
-import { isMatch } from '@writetome51/is-match';
+import {getIndexesOf} from '../index.js';
+import {isMatch} from '@writetome51/is-match';
+
 
 let arr = [1, 'h', [3], 1, 'h', [3], 1, 'h', [3], 1, 'h', [3], 1, 'h', [3]];
 let arrCopy = arr;
@@ -66,11 +67,10 @@ let errorTriggered = false;
 // Test 6: should trigger error if only 1 arg is passed:
 errorTriggered = false;
 try {
-    // @ts-ignore
-    getIndexesOf(arr);
-}
-catch (e) {
-    errorTriggered = true;
+	// @ts-ignore
+	getIndexesOf(arr);
+} catch (e) {
+	errorTriggered = true;
 }
 if (errorTriggered) console.log('test 6 passed');
 else console.log('test 6 FAILED');
@@ -79,10 +79,9 @@ else console.log('test 6 FAILED');
 // Test 7: should trigger error if second arg is object:
 errorTriggered = false;
 try {
-    getIndexesOf(arr, {});
-}
-catch (e) {
-    errorTriggered = true;
+	getIndexesOf(arr, {});
+} catch (e) {
+	errorTriggered = true;
 }
 if (errorTriggered) console.log('test 7 passed');
 else console.log('test 7 FAILED');
@@ -91,16 +90,15 @@ else console.log('test 7 FAILED');
 // Test 8
 errorTriggered = false;
 try {
-    getIndexesOf(false, '');
-}
-catch (e) {
-    errorTriggered = true;
+	getIndexesOf(false, '');
+} catch (e) {
+	errorTriggered = true;
 }
 if (errorTriggered) console.log('test 8 passed');
 else console.log('test 8 FAILED');
 
 
-
+/****************************
 // speed test
 arr = [];
 let result;
@@ -115,3 +113,5 @@ ms = Date.now() - ms;
 console.log(ms);
 
 console.log(result);
+
+ **************************/

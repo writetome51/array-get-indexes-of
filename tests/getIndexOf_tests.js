@@ -117,7 +117,7 @@ if (result === arr.length - 13) console.log('test 12B passed');
 else console.log('test 12B FAILED');
 
 
-
+/*********************
 // speed test
 arr = [];
 let i = -1;
@@ -139,3 +139,4 @@ while (++i < 100000000) result = arr.indexOf('a');
 ms = Date.now() - ms;
 console.log(ms);
 
+ *********************/
